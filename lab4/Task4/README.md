@@ -20,11 +20,9 @@
 ## Запуск проекта
 
 1. Клонируйте репозиторий:
-<<<<<<< HEAD
 git clone https://github.com/befovis/algorithms_and_data_structures
 2. Перейдите в папку с проектом:
 cd "algorithms_and_data_structures/lab4"
-
 3. Запустите программу:
 python src/main.py
 
