@@ -34,7 +34,7 @@ git clone https://github.com/befovis/algorithms_and_data_structures
 
 2. Перейдите в папку с лабораторной работой:
 ```bash
-cd "algorithms_and_data_structures/lab6"
+cd "algorithms_and_data_structures/lab4"
 ```
 
 3. Для запуска всех задач и тестов выполните команду:
