@@ -1,0 +1,7 @@
+f = open("../../task1/txtf/input.txt")
+a, b = map(int, f.readline().split())
+f.close()
+res = str(a + b)
+w = open("../../task1/txtf/output.txt", 'w')
+w.write(res)
+w.close()
