@@ -3,21 +3,21 @@
 ### Вариант 11
 ## Навигация по репозиторию
 
-[﻿﻿﻿Лабораторная Nº0. Введение](https://github.com/befovis/asd-itmo/tree/main/lab0)
+[﻿﻿﻿Лабораторная Nº0. Введение](https://github.com/befovis/algorithms_itmo/tree/main/lab0)
 
-[﻿﻿﻿Лабораторная Nº1. Сортировка вставками, выбором, пузырьковая](https://github.com/befovis/asd-itmo/tree/main/lab1)
+[﻿﻿﻿Лабораторная Nº1. Сортировка вставками, выбором, пузырьковая](https://github.com/befovis/algorithms_itmo/tree/main/lab1)
 
-﻿﻿﻿[Лабораторная Nº2. Сортировка слиянием. Метод декомпозиции](https://github.com/befovis/asd-itmo/tree/main/lab2)
+﻿﻿﻿[Лабораторная Nº2. Сортировка слиянием. Метод декомпозиции](https://github.com/befovis/algorithms_itmo/tree/main/lab2)
    
-[Лабораторная Nº3. Быстрая сортировка, сортировка за линейное время](https://github.com/befovis/asd-itmo/tree/main/lab3)
+[Лабораторная Nº3. Быстрая сортировка, сортировка за линейное время](https://github.com/befovis/algorithms_itmo/tree/main/lab3)
 
-[Лабораторная Nº4. Стек, очередь, связанный список](https://github.com/befovis/asd-itmo/tree/main/lab4)
+[Лабораторная Nº4. Стек, очередь, связанный список](https://github.com/befovis/algorithms_itmo/tree/main/lab4)
 
-[Лабораторная Nº5. Пирамида, пирамидальная сортировка. Очередь с приоритетами](https://github.com/befovis/asd-itmo/tree/main/lab5)
+[Лабораторная Nº5. Пирамида, пирамидальная сортировка. Очередь с приоритетами](https://github.com/befovis/algorithms_itmo/tree/main/lab5)
 
-[Лабораторная Nº6. Хеширование. Хеш-таблицы](https://github.com/befovis/asd-itmo/tree/main/lab6)
+[Лабораторная Nº6. Хеширование. Хеш-таблицы](https://github.com/befovis/algorithms_itmo/tree/main/lab6)
 
-[Лабораторная Nº7. Динамическое программирование](https://github.com/befovis/asd-itmo/tree/main/lab7)
+[Лабораторная Nº7. Динамическое программирование](https://github.com/befovis/algorithms_itmo/tree/main/lab7)
 
 
 ### Цели и задачи
