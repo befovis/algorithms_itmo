@@ -28,10 +28,16 @@
 ## Инструкция по запуску
 
 1. Клонируйте репозиторий:
-      git clone https://github.com/befovis/algorithms_and_data_structures
-   
+```bash
+git clone https://github.com/befovis/algorithms_and_data_structures
+```
+
 2. Перейдите в папку с лабораторной работой:
-      cd "algorithms_and_data_structures/lab4"
-   
-3. Запустите все задачи и тесты:
-      python run_all.py
+```bash
+cd "algorithms_and_data_structures/lab6"
+```
+
+3. Для запуска всех задач и тестов выполните команду:
+```bash
+python run_all.py
+```
