@@ -1,9 +1,6 @@
 # Лабораторная работа №4: Стек, очередь, связанный список.
 ### Студентка ИТМО, Жмачинская Диана Станиславовна
-<<<<<<< HEAD
 ## Вариант 11
-=======
->>>>>>> 97d8e4d6c15bc0c46f69ce2ee047e868e975f69b
 
 ## Описание
 
@@ -32,17 +29,11 @@
 ## Инструкция по запуску
 
 1. Клонируйте репозиторий:
-<<<<<<< HEAD
       git clone https://github.com/befovis/algorithms_and_data_structures
    
 2. Перейдите в папку с лабораторной работой:
       cd "algorithms_and_data_structures/lab4"
-=======
-      git clone https://github.com/Nick-Mur/itmo_algorithms_and_data_structures
-   
-2. Перейдите в папку с лабораторной работой:
-      cd "itmo_algorithms_and_data_structures/lab4"
->>>>>>> 97d8e4d6c15bc0c46f69ce2ee047e868e975f69b
+      git clone https://github.com/befovis/algorithms_and_data_structures
    
 3. Запустите все задачи и тесты:
       python run_all.py
