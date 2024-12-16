@@ -22,14 +22,14 @@
 
 ## Запуск проекта
 
-<<<<<<< HEAD
+
 1. Клонируйте репозиторий:
 ```bash
 git clone https://github.com/befovis/algorithms_and_data_structures
 ```
 2. Перейдите в папку с проектом:
 ```bash
-cd algorithms_and_data_structures/lab5/task4
+cd algorithms_and_data_structures/lab5/task7
 ```
 3. Запустите программу:
 ```bash
@@ -41,16 +41,4 @@ python src/main.py
 ```bash
 pytest tests/
 ```
-=======
-1. Клонируйте репозиторий:  
-   
-   git clone https://github.com/username/repository-name.git
-   
-2. Перейдите в папку с проектом:  
-   
-   cd repository-name/lab5/task7
-   
-3. Запустите программу:  
-   
-   python src/main.py
-   
+

@@ -36,14 +36,7 @@ cd algorithms_and_data_structures/lab7/task7
 python src/main.py
 ```
 
-<<<<<<< HEAD
 4. Для запуска тестов выполните:
 ```bash
 pytest tests/
 ```
-=======
-3. Для запуска всех задач и тестов выполните команду:  
-```bash  
-python run_all.py  
-```  
->>>>>>> 97d8e4d6c15bc0c46f69ce2ee047e868e975f69b
