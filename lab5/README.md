@@ -22,7 +22,7 @@
  
 1. Клонируйте репозиторий: 
    bash 
-   git clone https://github.com/Nick-Mur/itmo_algorithms_and_data_structures 
+   git clone https://github.com/befovis/algorithms_and_data_structures 
     
  
 2. Перейдите в папку с лабораторной работой: 
