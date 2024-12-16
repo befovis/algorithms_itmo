@@ -1,10 +1,6 @@
-<<<<<<< HEAD
 # Задание №2: Очередь
 ## Вариант 11
-=======
-# Задание №2 по варианту: Очередь
-## Вариант 14
->>>>>>> 97d8e4d6c15bc0c46f69ce2ee047e868e975f69b
+
 
 ## Задание
 Реализовать обработку операций с очередью. Программа должна поддерживать команды добавления элемента в очередь (`+ x`) и извлечения первого элемента (`-`) с записью результата.
@@ -29,11 +25,7 @@
 git clone https://github.com/befovis/algorithms_and_data_structures
 2. Перейдите в папку с проектом:
 cd "algorithms_and_data_structures/lab4"
-=======
-git clone https://github.com/username/repository-name.git
-2. Перейдите в папку с проектом:
-cd repository-name/lab2
->>>>>>> 97d8e4d6c15bc0c46f69ce2ee047e868e975f69b
+
 3. Запустите программу:
 python src/main.py
 
