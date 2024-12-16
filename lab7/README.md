@@ -19,24 +19,19 @@
 - Время: 1 сек.
 - Память: 64 МБ.
 
-## Запуск проекта
+## Инструкция по запуску
 
 1. Клонируйте репозиторий:
 ```bash
 git clone https://github.com/befovis/algorithms_and_data_structures
 ```
 
-2. Перейдите в папку с проектом:
+2. Перейдите в папку с лабораторной работой:
 ```bash
-cd algorithms_and_data_structures/lab7/task7
+cd "algorithms_and_data_structures/lab6"
 ```
 
-3. Запустите программу:
+3. Для запуска всех задач и тестов выполните команду:
 ```bash
-python src/main.py
-```
-
-4. Для запуска тестов выполните:
-```bash
-pytest tests/
+python run_all.py
 ```
