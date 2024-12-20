@@ -20,12 +20,12 @@
 
 1. Клонируйте репозиторий:
 ```bash
-git clone https://github.com/befovis/algorithms_and_data_structures
+git clone https://github.com/befovis/algorithms_itmo
 ```
 
 2. Перейдите в папку с проектом:
 ```bash
-cd algorithms_and_data_structures/lab6/task8
+cd algorithms_itmo/lab6/task8
 ```
 
 3. Запустите программу:

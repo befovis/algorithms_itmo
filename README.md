@@ -37,13 +37,13 @@
 
 1. Клонируйте репозиторий:
    ```bash
-   git clone https://github.com/username/itmo_algorithms_and_data_structures.git
+   git clone https://github.com/username/algorithms_itmo.git
    ```
 2. Перейдите в папку с проектом:
    ```bash
-   cd itmo_algorithms_and_data_structures
+   cd algorithms_itmo
    ```
-3. **Запуску всех лабараторных и тестов**
+3. **Запуску всех лабoраторных и тестов**
     ```bash
     python src/run_all.py
       ```

@@ -21,9 +21,9 @@
 ## Запуск проекта
 
 1. Клонируйте репозиторий:
-git clone https://github.com/befovis/algorithms_and_data_structures
+git clone https://github.com/befovis/algorithms_itmo
 2. Перейдите в папку с проектом:
-cd "algorithms_and_data_structures/lab4"
+cd "algorithms_itmo/lab4"
 3. Запустите программу:
 python src/main.py
 
