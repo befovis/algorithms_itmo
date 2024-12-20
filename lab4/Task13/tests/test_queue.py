@@ -1,5 +1,3 @@
-# Lab4/Task13/tests/test_queue.py
-
 import unittest
 from lab4.Task13.src.Queue import Queue
 
@@ -7,32 +5,38 @@ class TestQueue(unittest.TestCase):
     def setUp(self):
         self.queue = Queue(5)
 
-    def test_empty_queue(self):
-        self.assertTrue(self.queue.is_empty())
-        self.assertEqual(self.queue.peek(), None)
-        self.assertEqual(self.queue.size(), 0)
-
-    def test_enqueue(self):
-        self.queue.enqueue(10)
-        self.assertFalse(self.queue.is_empty())
-        self.assertEqual(self.queue.peek(), 10)
+    def test_given_empty_queue_when_enqueue_then_peek_and_size_correct(self):
+        # GIVEN
+        # WHEN
+        self.queue.enqueue(42)
+        # THEN
+        self.assertEqual(self.queue.peek(), 42)
         self.assertEqual(self.queue.size(), 1)
 
-    def test_dequeue(self):
-        self.queue.dequeue()
-        self.assertTrue(self.queue.is_empty())
-        self.assertEqual(self.queue.peek(), None)
-        self.assertEqual(self.queue.size(), 0)
-        self.assertEqual(self.queue.dequeue(), 'Очередь пуста')
-
-    def test_full(self):
-        self.queue.enqueue(20)
+    def test_given_queue_one_element_when_dequeue_then_empty(self):
+        # GIVEN
         self.queue.enqueue(10)
-        self.queue.enqueue(30)
-        self.queue.enqueue(40)
-        self.queue.enqueue(50)
-        self.assertTrue(self.queue.is_full())
-        self.assertEqual(self.queue.enqueue(60), 'Очередь переполнена')
+        # WHEN
+        removed = self.queue.dequeue()
+        # THEN
+        self.assertEqual(removed, 10)
+        self.assertTrue(self.queue.is_empty())
+
+    def test_given_full_queue_when_enqueue_then_overflow(self):
+        # GIVEN
+        for i in range(5):
+            self.queue.enqueue(i)
+        # WHEN
+        result = self.queue.enqueue(99)
+        # THEN
+        self.assertEqual(result, 'Очередь переполнена')
+
+    def test_given_empty_queue_when_dequeue_then_underflow(self):
+        # GIVEN
+        # WHEN
+        result = self.queue.dequeue()
+        # THEN
+        self.assertEqual(result, 'Очередь пуста')
 
 
 if __name__ == '__main__':

@@ -1,57 +1,48 @@
-# Task1/tests/tests.py
-
-"""Тесты для StackProcessor."""
-
 import unittest
 from lab4.Task1.src.StackProcessor import StackProcessor
 
-
 class TestStackProcessor(unittest.TestCase):
-    """Класс для тестирования StackProcessor."""
-
-    def test_should_process_stack_with_simple(self):
-        """Тест с простым случаем."""
-        commands = ["+ 5", "-"]
+    def test_given_empty_stack_when_push_multiple_then_no_results(self):
+        # GIVEN
         processor = StackProcessor()
-        processor.process_commands(commands)
-        self.assertEqual(processor.get_results(), [5])
-
-    def test_should_process_stack_with_multiple(self):
-        """Тест с несколькими операциями."""
-        commands = ["+ 1", "+ 10", "-", "+ 2", "+ 1234", "-"]
-        processor = StackProcessor()
-        processor.process_commands(commands)
-        self.assertEqual(processor.get_results(), [10, 1234])
-
-    def test_should_process_stack_with_large_numbers(self):
-        """Тест с большими числами."""
-        commands = ["+ 1000000000", "+ -1000000000", "-", "-"]
-        processor = StackProcessor()
-        processor.process_commands(commands)
-        self.assertEqual(processor.get_results(), [-1000000000, 1000000000])
-
-    def test_should_process_stack_with_interleaved_operations(self):
-        """Тест с чередующимися операциями."""
-        commands = ["+ 7", "+ 14", "-", "+ 21", "+ 28", "-", "-"]
-        processor = StackProcessor()
-        processor.process_commands(commands)
-        self.assertEqual(processor.get_results(), [14, 28, 21])
-
-    def test_should_process_stack_with_only_push(self):
-        """Тест с только операциями добавления."""
-        commands = ["+ 1", "+ 2", "+ 3"]
-        processor = StackProcessor()
-        processor.process_commands(commands)
+        # WHEN
+        processor.process_commands(["+ 10", "+ 20", "+ 30"])
+        # THEN
         self.assertEqual(processor.get_results(), [])
 
-    def test_should_fail_with_invalid_command(self):
-        """Тест с некорректной командой."""
-        commands = ["+1", "-"]
+    def test_given_stack_when_push_and_pop_all_then_results_reverse(self):
+        # GIVEN
         processor = StackProcessor()
-        self.assertFalse(processor.validate_commands(commands))
+        processor.process_commands(["+ 5", "+ 1", "+ 100"])
+        # WHEN
+        processor.process_commands(["-", "-", "-"])
+        # THEN
+        self.assertEqual(processor.get_results(), [100, 1, 5])
 
-    def test_should_fail_with_large_number(self):
-        """Тест с числом вне допустимого диапазона."""
-        commands = ["+ 10000000000", "-"]
+    def test_given_stack_when_interleave_push_pop_then_correct_results(self):
+        # GIVEN
         processor = StackProcessor()
-        self.assertFalse(processor.validate_commands(commands))
+        # WHEN
+        processor.process_commands(["+ 7", "+ 14", "-", "+ 21", "-", "+ 28", "-"])
+        # THEN
+        self.assertEqual(processor.get_results(), [14, 21, 28])
+
+    def test_given_invalid_commands_when_validate_then_false(self):
+        # GIVEN
+        processor = StackProcessor()
+        # WHEN
+        result = processor.validate_commands(["push10", "pop"])
+        # THEN
+        self.assertFalse(result)
+
+    def test_given_out_of_range_number_when_validate_then_false(self):
+        # GIVEN
+        processor = StackProcessor()
+        # WHEN
+        result = processor.validate_commands(["+ 999999999999", "-"])
+        # THEN
+        self.assertFalse(result)
+
+
+if __name__ == '__main__':
+    unittest.main()

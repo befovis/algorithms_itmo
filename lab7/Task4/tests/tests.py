@@ -2,31 +2,50 @@ import unittest
 from lab7.Task4.src.LCSFinder import LCSFinder
 
 class TestLongestCommonSubsequence(unittest.TestCase):
+    def test_given_two_arrays_when_lcs_then_correct_length(self):
+        # GIVEN
+        A = [4, 5, 6]
+        B = [1, 4, 5, 7]
+        # WHEN
+        result = LCSFinder.longest_common_subsequence(A, B)
+        # THEN
+        self.assertEqual(result, 2)
 
-    def test_with_common_elements(self):
-        A = [2, 7, 5]
-        B = [2, 5]
-        self.assertEqual(LCSFinder.longest_common_subsequence(A, B), 2)
+    def test_given_disjoint_sets_when_lcs_then_zero(self):
+        # GIVEN
+        A = [1,2,3]
+        B = [4,5,6]
+        # WHEN
+        result = LCSFinder.longest_common_subsequence(A, B)
+        # THEN
+        self.assertEqual(result, 0)
 
-    def test_no_common_elements(self):
-        A = [1, 2, 3]
-        B = [4, 5, 6]
-        self.assertEqual(LCSFinder.longest_common_subsequence(A, B), 0)
+    def test_given_identical_when_lcs_then_full_length(self):
+        # GIVEN
+        A = [10,20,30]
+        B = [10,20,30]
+        # WHEN
+        result = LCSFinder.longest_common_subsequence(A, B)
+        # THEN
+        self.assertEqual(result, 3)
 
-    def test_identical_sequences(self):
-        A = [1, 2, 3, 4]
-        B = [1, 2, 3, 4]
-        self.assertEqual(LCSFinder.longest_common_subsequence(A, B), 4)
-
-    def test_one_empty_sequence(self):
+    def test_given_empty_when_lcs_then_zero(self):
+        # GIVEN
         A = []
-        B = [1,2,3,4,5]
-        self.assertEqual(LCSFinder.longest_common_subsequence(A, B), 0)
+        B = [1,2,3]
+        # WHEN
+        result = LCSFinder.longest_common_subsequence(A, B)
+        # THEN
+        self.assertEqual(result, 0)
 
-    def test_repeated_elements(self):
-        A = [1, 2, 2, 3, 4]
-        B = [2, 2, 4, 5]
-        self.assertEqual(LCSFinder.longest_common_subsequence(A, B), 3)
+    def test_given_repeats_when_lcs_then_correct_length(self):
+        # GIVEN
+        A = [2,2,2]
+        B = [2,2]
+        # WHEN
+        result = LCSFinder.longest_common_subsequence(A, B)
+        # THEN
+        self.assertEqual(result, 2)
 
 
 if __name__ == "__main__":

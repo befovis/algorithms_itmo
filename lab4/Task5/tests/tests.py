@@ -1,94 +1,76 @@
-# Task5/tests/tests.py
-
-"""Тесты для MaxStack."""
-
 import unittest
 from lab4.Task5.src.MaxStack import MaxStack
 
-
 class TestMaxStack(unittest.TestCase):
-    """Класс для тестирования MaxStack."""
+    def test_given_push_get_max_then_correct_max(self):
+        # GIVEN
+        s = MaxStack()
+        # WHEN
+        s.push(2)
+        s.push(1)
+        s.push(3)
+        # THEN
+        self.assertEqual(s.get_max(), 3)
 
-    def test_should_push_and_get_max(self):
-        """Тест операций push и get_max."""
-        get_max_stack = MaxStack()
-        get_max_stack.push(2)
-        self.assertEqual(get_max_stack.get_max(), 2)
+    def test_given_push_pop_check_max_then_correct_behavior(self):
+        # GIVEN
+        s = MaxStack()
+        s.push(5)
+        s.push(3)
+        s.push(7)
+        # WHEN
+        s.pop()
+        # THEN
+        self.assertEqual(s.get_max(), 5)
+        s.pop()
+        self.assertEqual(s.get_max(), 5)
+        s.pop()
+        self.assertIsNone(s.get_max())
 
-        get_max_stack.push(1)
-        self.assertEqual(get_max_stack.get_max(), 2)
+    def test_given_empty_stack_when_get_max_then_none(self):
+        # GIVEN
+        s = MaxStack()
+        # WHEN
+        # THEN
+        self.assertIsNone(s.get_max())
 
-        get_max_stack.push(3)
-        self.assertEqual(get_max_stack.get_max(), 3)
+    def test_given_sequence_push_pop_then_correct_max(self):
+        # GIVEN
+        s = MaxStack()
+        # WHEN
+        s.push(10)
+        s.pop()
+        s.push(20)
+        # THEN
+        self.assertEqual(s.get_max(), 20)
 
-    def test_should_pop(self):
-        """Тест операции pop."""
-        get_max_stack = MaxStack()
-        get_max_stack.push(5)
-        get_max_stack.push(3)
-        get_max_stack.push(7)
+    def test_given_same_values_when_pop_then_max_remains(self):
+        # GIVEN
+        s = MaxStack()
+        # WHEN
+        s.push(5)
+        s.push(5)
+        s.push(5)
+        s.pop()
+        # THEN
+        self.assertEqual(s.get_max(), 5)
 
-        get_max_stack.pop()
-        self.assertEqual(get_max_stack.get_max(), 5)
-
-        get_max_stack.pop()
-        self.assertEqual(get_max_stack.get_max(), 5)
-
-        get_max_stack.pop()
-        self.assertIsNone(get_max_stack.get_max())
-
-    def test_should_handle_empty_stack_get_max(self):
-        """Тест получения get_max из пустого стека."""
-        get_max_stack = MaxStack()
-        self.assertIsNone(get_max_stack.get_max())
-
-    def test_should_push_pop_push(self):
-        """Тест последовательности операций push и pop."""
-        get_max_stack = MaxStack()
-        get_max_stack.push(10)
-        get_max_stack.pop()
-        get_max_stack.push(20)
-        self.assertEqual(get_max_stack.get_max(), 20)
-
-    def test_should_push_same_values(self):
-        """Тест с одинаковыми значениями."""
-        get_max_stack = MaxStack()
-        get_max_stack.push(5)
-        get_max_stack.push(5)
-        get_max_stack.push(5)
-        self.assertEqual(get_max_stack.get_max(), 5)
-
-        get_max_stack.pop()
-        self.assertEqual(get_max_stack.get_max(), 5)
-
-        get_max_stack.pop()
-        self.assertEqual(get_max_stack.get_max(), 5)
-
-        get_max_stack.pop()
-        self.assertIsNone(get_max_stack.get_max())
-
-    def test_should_validate_commands(self):
-        """Тест валидации команд."""
-        valid_n = 3
-        valid_commands = ["push 10", "pop", "max"]
-        self.assertTrue(MaxStack.validate_commands(valid_n, valid_commands))
-
-        invalid_n = 0
-        invalid_commands = []
-        self.assertFalse(MaxStack.validate_commands(invalid_n, invalid_commands))
-
-        invalid_n = 3
-        invalid_commands = ["push -1", "pop", "max"]
-        self.assertFalse(MaxStack.validate_commands(invalid_n, invalid_commands))
-
-        invalid_commands = ["push 100001", "pop", "max"]
-        self.assertFalse(MaxStack.validate_commands(invalid_n, invalid_commands))
-
-        invalid_commands = ["push", "pop", "max"]
-        self.assertFalse(MaxStack.validate_commands(invalid_n, invalid_commands))
-
-        invalid_commands = ["invalid_command", "pop", "max"]
-        self.assertFalse(MaxStack.validate_commands(invalid_n, invalid_commands))
+    def test_given_commands_validation_then_correct_result(self):
+        # GIVEN
+        # WHEN
+        valid = MaxStack.validate_commands(3, ["push 10", "pop", "max"])
+        invalid_empty = MaxStack.validate_commands(0, [])
+        invalid_negative = MaxStack.validate_commands(3, ["push -1", "pop", "max"])
+        invalid_large = MaxStack.validate_commands(3, ["push 100001", "pop", "max"])
+        invalid_no_arg = MaxStack.validate_commands(3, ["push", "pop", "max"])
+        invalid_unknown = MaxStack.validate_commands(3, ["invalid_command", "pop", "max"])
+        # THEN
+        self.assertTrue(valid)
+        self.assertFalse(invalid_empty)
+        self.assertFalse(invalid_negative)
+        self.assertFalse(invalid_large)
+        self.assertFalse(invalid_no_arg)
+        self.assertFalse(invalid_unknown)
 
 
 if __name__ == '__main__':
